@@ -1,0 +1,20 @@
+{
+  "full_name": "Roman Sadzhenytsia",
+  "email": "dukkee@example.com",
+  "github_username": "dukkee",
+  "github_organization": "boardpack",
+  "organization_url": "{{ cookiecutter.github_organization }}.org",
+  "project_name": "Boardpack Python Boilerplate",
+  "dist_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "package_name": "{{ cookiecutter.dist_name.replace('-', '_') }}",
+  "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+  "docs_url": "https://{{ cookiecutter.dist_name }}.{{ cookiecutter.organization_url }}",
+  "repository_name": "{{ cookiecutter.github_organization }}/{{ cookiecutter.dist_name }}",
+  "repository_url": "https://github.com/{{ cookiecutter.repository_name }}",
+  "pypi_username": "{{ cookiecutter.github_username }}",
+  "version": "0.1.0",
+  "use_pytest": "y",
+  "use_dependabot": "y",
+  "use_pre_commit_hook": "y",
+  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
+}

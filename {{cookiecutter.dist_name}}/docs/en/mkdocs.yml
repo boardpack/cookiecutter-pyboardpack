@@ -1,0 +1,81 @@
+site_name: {{ cookiecutter.project_name }}
+site_description: {{ cookiecutter.project_short_description }}
+site_url: {{ cookiecutter.docs_url }}
+theme:
+  name: material
+  palette:
+  - scheme: default
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to light mode
+  - scheme: slate
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb
+      name: Switch to dark mode
+  features:
+  - search.suggest
+  - search.highlight
+  icon:
+    repo: fontawesome/brands/github-alt
+  logo: img/icon-white.svg
+  favicon: img/favicon.png
+  language: en
+repo_name: {{ cookiecutter.repository_name }}
+repo_url: {{ cookiecutter.repository_url }}
+edit_uri: 'edit/master/docs'
+
+copyright: Copyright &copy; 2021 {{ cookiecutter.full_name }}
+
+plugins:
+- search
+- markdownextradata:
+    data: data
+nav:
+- {{ cookiecutter.project_name }}: index.md
+- Languages:
+  - en: /
+  - ru: /ru
+- features.md
+- help-{{ cookiecutter.dist_name }}.md
+- contributing.md
+- release-notes.md
+markdown_extensions:
+- toc:
+    permalink: true
+- markdown.extensions.codehilite:
+    guess_lang: false
+- markdown_include.include:
+    base_path: docs
+- admonition
+- codehilite
+- extra
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_div_format ''
+- pymdownx.tabbed
+extra:
+  social:
+  - icon: fontawesome/brands/github-alt
+    link: {{ cookiecutter.repository_url }}
+  - icon: fontawesome/brands/telegram
+    link: https://t.me/{{ cookiecutter.github_username }}
+  - icon: fontawesome/solid/globe
+    link: https://{{ cookiecutter.organization_url }}
+  alternate:
+  - link: /
+    name: English
+  - link: /ru
+    name: Русский
+extra_css:
+- css/termynal.css
+- css/custom.css
+extra_javascript:
+- https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js
+- js/termynal.js
+- js/custom.js
