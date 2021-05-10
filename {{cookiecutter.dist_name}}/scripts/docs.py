@@ -63,7 +63,9 @@ def get_base_lang_config(lang: str):
     new_config = en_config.copy()
     new_config["site_url"] = en_config["site_url"] + f"{lang}/"
     new_config["theme"]["logo"] = en_config["site_url"] + en_config["theme"]["logo"]
-    new_config["theme"]["favicon"] = en_config["site_url"] + en_config["theme"]["favicon"]
+    new_config["theme"]["favicon"] = (
+        en_config["site_url"] + en_config["theme"]["favicon"]
+    )
     new_config["theme"]["language"] = lang
     new_config["nav"] = en_config["nav"][:2]
     extra_css = []
@@ -315,7 +317,8 @@ def update_config(lang: str):
         config["theme"]["palette"] = current_config["theme"]["palette"]
 
     original_languages: Dict[str, str] = {
-        re.sub("[^a-z]", "", v) or "en": k for lang in config["nav"][1]["Languages"]
+        re.sub("[^a-z]", "", v) or "en": k
+        for lang in config["nav"][1]["Languages"]
         for k, v in lang.items()
     }
     languages: List[Dict[str, str]] = []
