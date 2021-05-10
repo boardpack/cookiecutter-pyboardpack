@@ -9,13 +9,13 @@ theme:
     accent: amber
     toggle:
       icon: material/lightbulb-outline
-      name: Switch to light mode
+      name: Switch to dark mode
   - scheme: slate
     primary: teal
     accent: amber
     toggle:
       icon: material/lightbulb
-      name: Switch to dark mode
+      name: Switch to light mode
   features:
   - search.suggest
   - search.highlight
@@ -26,10 +26,8 @@ theme:
   language: en
 repo_name: {{ cookiecutter.repository_name }}
 repo_url: {{ cookiecutter.repository_url }}
-edit_uri: 'edit/master/docs'
-
+edit_uri: ''
 copyright: Copyright &copy; 2021 {{ cookiecutter.full_name }}
-
 plugins:
 - search
 - markdownextradata:
@@ -37,8 +35,8 @@ plugins:
 nav:
 - {{ cookiecutter.project_name }}: index.md
 - Languages:
-  - en: /
-  - ru: /ru
+  - English: /
+  - Русский: /ru/
 - features.md
 - help-{{ cookiecutter.dist_name }}.md
 - contributing.md
@@ -70,7 +68,7 @@ extra:
   alternate:
   - link: /
     name: English
-  - link: /ru
+  - link: /ru/
     name: Русский
 extra_css:
 - css/termynal.css

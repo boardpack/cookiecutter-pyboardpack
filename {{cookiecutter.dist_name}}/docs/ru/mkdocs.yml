@@ -9,27 +9,25 @@ theme:
     accent: amber
     toggle:
       icon: material/lightbulb-outline
-      name: Перейти к светлой версии
+      name: Перейти к темной версии
   - scheme: slate
     primary: teal
     accent: amber
     toggle:
       icon: material/lightbulb
-      name: Перейти к темной версии
+      name: Перейти к cветлой версии
   features:
   - search.suggest
   - search.highlight
   icon:
     repo: fontawesome/brands/github-alt
-  logo: img/icon-white.svg
-  favicon: img/favicon.png
+  logo: {{ cookiecutter.docs_url }}/img/icon-white.svg
+  favicon: {{ cookiecutter.docs_url }}/img/favicon.png
   language: ru
 repo_name: {{ cookiecutter.repository_name }}
 repo_url: {{ cookiecutter.repository_url }}
-edit_uri: 'edit/master/docs'
-
+edit_uri: ''
 copyright: Copyright &copy; 2021 {{ cookiecutter.full_name }}
-
 plugins:
 - search
 - markdownextradata:
@@ -37,8 +35,8 @@ plugins:
 nav:
 - {{ cookiecutter.project_name }}: index.md
 - Languages:
-  - en: /
-  - ru: /ru
+  - English: /
+  - Русский: /ru/
 - features.md
 - help-{{ cookiecutter.dist_name }}.md
 - contributing.md
@@ -70,12 +68,12 @@ extra:
   alternate:
   - link: /
     name: English
-  - link: /ru
+  - link: /ru/
     name: Русский
 extra_css:
-- css/termynal.css
-- css/custom.css
+- {{ cookiecutter.docs_url }}/css/termynal.css
+- {{ cookiecutter.docs_url }}/css/custom.css
 extra_javascript:
 - https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js
-- js/termynal.js
-- js/custom.js
+- {{ cookiecutter.docs_url }}/js/termynal.js
+- {{ cookiecutter.docs_url }}/js/custom.js

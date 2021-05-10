@@ -60,11 +60,10 @@ def complete_existing_lang(incomplete: str):
 
 def get_base_lang_config(lang: str):
     en_config = get_en_config()
-    url_base = "{{ cookiecutter.docs_url }}"
     new_config = en_config.copy()
     new_config["site_url"] = en_config["site_url"] + f"{lang}/"
-    new_config["theme"]["logo"] = url_base + en_config["theme"]["logo"]
-    new_config["theme"]["favicon"] = url_base + en_config["theme"]["favicon"]
+    new_config["theme"]["logo"] = en_config["site_url"] + en_config["theme"]["logo"]
+    new_config["theme"]["favicon"] = en_config["site_url"] + en_config["theme"]["favicon"]
     new_config["theme"]["language"] = lang
     new_config["nav"] = en_config["nav"][:2]
     extra_css = []
@@ -73,7 +72,7 @@ def get_base_lang_config(lang: str):
         if css.startswith("http"):
             extra_css.append(css)
         else:
-            extra_css.append(url_base + css)
+            extra_css.append(en_config["site_url"] + css)
     new_config["extra_css"] = extra_css
 
     extra_js = []
@@ -82,7 +81,7 @@ def get_base_lang_config(lang: str):
         if js.startswith("http"):
             extra_js.append(js)
         else:
-            extra_js.append(url_base + js)
+            extra_js.append(en_config["site_url"] + js)
     new_config["extra_javascript"] = extra_js
     return new_config
 
@@ -313,15 +312,26 @@ def update_config(lang: str):
         config = get_base_lang_config(lang)
         config["nav"] = current_config["nav"]
         config["theme"]["language"] = current_config["theme"]["language"]
-    languages = [{"en": "/"}]
+        config["theme"]["palette"] = current_config["theme"]["palette"]
+
+    original_languages: Dict[str, str] = {
+        re.sub("[^a-z]", "", v) or "en": k for lang in config["nav"][1]["Languages"]
+        for k, v in lang.items()
+    }
+    languages: List[Dict[str, str]] = []
+
     alternate: List[Dict[str, str]] = config["extra"].get("alternate", [])
     alternate_dict = {alt["link"]: alt["name"] for alt in alternate}
     new_alternate: List[Dict[str, str]] = []
     for lang_path in get_lang_paths():
-        if lang_path.name == "en" or not lang_path.is_dir():
+        if not lang_path.is_dir():
             continue
-        name = lang_path.name
-        languages.append({name: f"/{name}/"})
+
+        name = path_part = lang_path.name
+        if name in original_languages:
+            name = original_languages[name]
+
+        languages.append({name: "/" if path_part == "en" else f"/{path_part}/"})
     for lang_dict in languages:
         name = list(lang_dict.keys())[0]
         url = lang_dict[name]

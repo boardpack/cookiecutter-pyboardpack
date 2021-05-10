@@ -34,7 +34,7 @@ requires = [
 ]
 
 [tool.flit.metadata.urls]
-Documentation = ""
+Documentation = "{{ cookiecutter.docs_url }}"
 
 [tool.flit.metadata.requires-extra]
 test = [
@@ -52,7 +52,7 @@ dev = [
 ]
 doc = [
     "mkdocs >=1.1.2,<2.0.0",
-    "mkdocs-material >=6.1.4,<7.0.0",
+    "mkdocs-material >=7.1.4",
     "markdown-include >=0.5.1,<0.6.0",
     "mkdocs-markdownextradata-plugin >=0.1.7,<0.2.0",
     "typer-cli >=0.0.9,<0.0.10",
