@@ -22,8 +22,8 @@ Cookiecutter template for a Python 3.6+ package for Boardpack projects.
 - [X] Static typing with [`mypy`](http://mypy-lang.org/)
 - [X] Dependencies kept up to date by [`dependabot`](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically)
 - [X] Automatic packaging with [`flit`](https://github.com/takluyver/flit)
-- [ ] Ready-to-use [GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions) pipelines:
-    - [ ] Netlify Preview documentation deployment
+- [X] Ready-to-use [GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions) pipelines:
+    - [X] Netlify Preview documentation deployment
     - [X] First PR greeting
     - [X] Testing
     - [X] Package publishing
@@ -34,7 +34,8 @@ Cookiecutter template for a Python 3.6+ package for Boardpack projects.
 * Enable the GitHub repository in [Codecov](https://codecov.io/gh)
 * Add the next environment variables:
     * CODECOV_TOKEN
-    * FLIT_USERNAME and FLIT_PASSWORD (username/password from your pypi.org account)
+    * FLIT_USERNAME and FLIT_PASSWORD (username/password from your [pypi.org](https://pypi.org/) account)
+    * NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID (you can find [here](https://github.com/marketplace/actions/netlify-actions#required-inputs-and-env) how to get those tokens)
 * Replace default images in the docs and README.md
 
 ## Acknowledgments
