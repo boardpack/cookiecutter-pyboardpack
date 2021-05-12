@@ -1,4 +1,4 @@
-black ==21.5b0
+black ==21.5b1
 flake8 >=3.8.3,<4.0.0
 isort >=5.0.6,<6.0.0
 pytest ==5.4.3
