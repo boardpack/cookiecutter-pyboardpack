@@ -27,6 +27,7 @@ Cookiecutter template for a Python 3.6+ package for Boardpack projects.
     - [X] First PR greeting
     - [X] Testing
     - [X] Package publishing
+    - [X] Automatic release notes updating
 
 ## Quickstart checklist
 

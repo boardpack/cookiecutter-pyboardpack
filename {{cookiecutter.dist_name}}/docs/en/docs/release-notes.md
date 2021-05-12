@@ -1,20 +1,5 @@
 # Release Notes
 
-## {{ cookiecutter.version }}
+## Latest Changes
 
-### Features
-
-* 👥 Stub
-
-### Breaking changes
-
-* 👥 Stub
-
-### Fixes
-
-* 🎨 Stub
-
-### Docs
-
-* 📝 Stub
 
