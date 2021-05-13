@@ -8,7 +8,7 @@ updates:
     pull-request-branch-name:
       separator: "-"
     commit-message:
-      prefix: "🔧"
+      prefix: "⬆"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -17,4 +17,4 @@ updates:
     pull-request-branch-name:
       separator: "-"
     commit-message:
-      prefix: "🔧"
+      prefix: "⬆"
