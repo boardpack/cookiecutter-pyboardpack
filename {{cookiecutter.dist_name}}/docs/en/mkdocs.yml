@@ -5,13 +5,13 @@ theme:
   name: material
   palette:
   - scheme: default
-    primary: teal
+    primary: deep purple
     accent: amber
     toggle:
       icon: material/lightbulb-outline
       name: Switch to dark mode
   - scheme: slate
-    primary: teal
+    primary: deep purple
     accent: amber
     toggle:
       icon: material/lightbulb
@@ -21,7 +21,7 @@ theme:
   - search.highlight
   icon:
     repo: fontawesome/brands/github-alt
-  logo: img/icon-white.svg
+  logo: img/icon-white.png
   favicon: img/favicon.png
   language: en
 repo_name: {{ cookiecutter.repository_name }}

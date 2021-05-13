@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="{{ cookiecutter.docs_url }}/"><img src="{{ cookiecutter.docs_url }}//img/logo-margin/logo-teal.png" alt="{{ cookiecutter.project_name }}"></a>
+  <a href="{{ cookiecutter.docs_url }}/"><img src="{{ cookiecutter.docs_url }}/img/logo-white.png" alt="{{ cookiecutter.project_name }}"></a>
 </p>
 <p align="center">
     <em>{{ cookiecutter.project_short_description }}</em>
