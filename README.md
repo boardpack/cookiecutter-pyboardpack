@@ -37,6 +37,9 @@ Cookiecutter template for a Python 3.6+ package for Boardpack projects.
     * CODECOV_TOKEN
     * FLIT_USERNAME and FLIT_PASSWORD (username/password from your [pypi.org](https://pypi.org/) account)
     * NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID (you can find [here](https://github.com/marketplace/actions/netlify-actions#required-inputs-and-env) how to get those tokens)
+* Make the next changes on the Netlify dashboard:
+    * Turn off Deploy Previews (Settings -> Build & deploy -> Continuous Deployment -> Deploy Previews)
+    * Change Production branch into any other name (Settings -> Build & deploy -> Continuous Deployment -> Deploy contexts)
 * Replace default images in the docs and README.md
 
 ## Acknowledgments
