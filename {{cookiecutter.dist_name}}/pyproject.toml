@@ -52,12 +52,12 @@ dev = [
     "tox >=3.23.1",
 ]
 doc = [
-    "mkdocs >=1.1.2,<2.0.0",
-    "mkdocs-material >=7.1.4",
-    "markdown-include >=0.5.1,<0.6.0",
-    "mkdocs-markdownextradata-plugin >=0.1.7,<0.2.0",
-    "typer-cli >=0.0.9,<0.0.10",
-    "pyyaml >=5.3.1,<6.0.0"
+    "mkdocs ==1.1.2",
+    "mkdocs-material ==7.1.4",
+    "markdown-include ==0.5.1",
+    "mkdocs-markdownextradata-plugin ==0.1.9",
+    "typer-cli ==0.0.9",
+    "pyyaml ==5.4.1",
 ]
 
 [tool.isort]
