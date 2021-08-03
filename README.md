@@ -41,6 +41,7 @@ Cookiecutter template for a Python 3.6+ package for Boardpack projects.
     * Turn off Deploy Previews (Settings -> Build & deploy -> Continuous Deployment -> Deploy Previews)
     * Change Production branch into any other name (Settings -> Build & deploy -> Continuous Deployment -> Deploy contexts)
 * Replace default images in the docs and README.md
+* Add custom domain to Netlify (optional)
 
 ## Acknowledgments
 
