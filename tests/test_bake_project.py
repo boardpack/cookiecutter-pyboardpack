@@ -35,3 +35,15 @@ def test_generate_project(cookies, base_context):
     ]
     assert paths
     check_paths(paths)
+
+
+def test_top_package_description(cookies, base_context):
+    result = cookies.bake(extra_context=base_context)
+
+    full_path = os.path.join(
+        str(result.project), result.context["package_name"], "__init__.py"
+    )
+    with open(full_path) as fp:
+        description = fp.readline()
+
+    assert description[3:-4] == result.context["project_short_description"]
