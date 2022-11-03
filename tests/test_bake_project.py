@@ -1,5 +1,6 @@
 import os
 import re
+import subprocess
 from pathlib import Path
 
 from binaryornot.check import is_binary
@@ -47,3 +48,12 @@ def test_top_package_description(cookies, base_context):
         description = fp.readline()
 
     assert description[3:-4] == result.context["project_short_description"]
+
+
+def test_install_dependencies(cookies, base_context):
+    result = cookies.bake(extra_context=base_context)
+    subprocess.check_call(
+        ["flit", "install", "--symlink"],
+        env=os.environ.copy(),
+        cwd=result.project_path,
+    )
