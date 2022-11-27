@@ -8,4 +8,4 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 bash ./scripts/lint.sh
 
 export PYTHONPATH="$SCRIPT_DIR/.."
-pytest tests
+pytest tests --verbose

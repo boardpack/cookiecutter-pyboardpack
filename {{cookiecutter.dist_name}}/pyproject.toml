@@ -2,12 +2,11 @@
 requires = ["flit"]
 build-backend = "flit.buildapi"
 
-[tool.flit.metadata]
-module = "{{ cookiecutter.package_name }}"
-dist-name = "{{ cookiecutter.dist_name }}"
-author = "{{ cookiecutter.full_name }}"
-author-email = "{{ cookiecutter.email }}"
-home-page = "{{ cookiecutter.repository_url }}"
+[project]
+name = "{{ cookiecutter.dist_name }}"
+authors = [
+    {name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}"},
+]
 classifiers = [
     "Intended Audience :: Information Technology",
     "Intended Audience :: System Administrators",
@@ -28,36 +27,42 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
 ]
-description-file = "README.md"
+readme = "README.md"
 requires-python = ">=3.6"
 requires = [
 ]
+dynamic = ["version", "description"]
 
-[tool.flit.metadata.urls]
+[tool.flit.module]
+name = "{{ cookiecutter.package_name }}"
+
+[project.urls]
 Documentation = "{{ cookiecutter.docs_url }}"
+Source = "{{ cookiecutter.repository_url }}"
 
-[tool.flit.metadata.requires-extra]
+[project.optional-dependencies]
 test = [
-    "pytest ==7.0.0",
-    "pytest-cov ==2.10.0",
-    "mypy ==0.812",
-    "flake8 ==4.0.0",
-    "black ==22.1.0",
-    "isort >=5.0.6,<6.0.0",
+    "pytest ==7.2.0",
+    "pytest-cov ==4.0.0",
+    "mypy ==0.991",
+    "flake8 ==6.0.0",
+    "black ==22.10.0",
+    "isort ==5.10.1",
 ]
 dev = [
-    "autoflake >=1.3.1,<2.0.0",
-    "flake8 ==4.0.0",
+    "autoflake ==2.0.0",
+    "flake8 ==6.0.0",
     "pre-commit",
-    "tox >=3.23.1",
+    "tox >=3.27.1",
 ]
 doc = [
-    "mkdocs ==1.1.2",
-    "mkdocs-material ==7.1.4",
-    "markdown-include ==0.5.1",
-    "mkdocs-markdownextradata-plugin ==0.1.9",
-    "typer ==0.4.0",
-    "pyyaml ==5.4.1",
+    "mkdocs ==1.4.2",
+    "mkdocs-material ==8.5.10",
+    "markdown ==3.2.1",
+    "markdown-include ==0.8.0",
+    "mkdocs-markdownextradata-plugin ==0.2.5",
+    "typer ==0.7.0",
+    "pyyaml ==6.0.0",
 ]
 
 [tool.isort]
