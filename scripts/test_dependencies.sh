@@ -7,7 +7,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 cookiecutter . --no-input --config-file ./tests/default_context.yml
 
-cd boardpack_project
+cd boardpack-project
 
 python -m venv venv && source venv/bin/activate
 
