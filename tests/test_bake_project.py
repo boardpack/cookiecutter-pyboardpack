@@ -52,8 +52,11 @@ def test_top_package_description(cookies, base_context):
 
 def test_install_dependencies(cookies, base_context):
     result = cookies.bake(extra_context=base_context)
-    subprocess.check_call(
+    output = subprocess.check_output(
         ["flit", "install", "--symlink"],
         env=os.environ.copy(),
         cwd=result.project_path,
+        stderr=subprocess.STDOUT,
     )
+    print(output)
+    assert b"ERROR: " not in output
