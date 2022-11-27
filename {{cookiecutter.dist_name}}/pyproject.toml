@@ -2,12 +2,11 @@
 requires = ["flit"]
 build-backend = "flit.buildapi"
 
-[tool.flit.metadata]
-module = "{{ cookiecutter.package_name }}"
-dist-name = "{{ cookiecutter.dist_name }}"
-author = "{{ cookiecutter.full_name }}"
-author-email = "{{ cookiecutter.email }}"
-home-page = "{{ cookiecutter.repository_url }}"
+[project]
+name = "{{ cookiecutter.dist_name }}"
+authors = [
+    {name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}"},
+]
 classifiers = [
     "Intended Audience :: Information Technology",
     "Intended Audience :: System Administrators",
@@ -28,15 +27,20 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
 ]
-description-file = "README.md"
+readme = "README.md"
 requires-python = ">=3.6"
 requires = [
 ]
+dynamic = ["version", "description"]
 
-[tool.flit.metadata.urls]
+[tool.flit.module]
+name = "{{ cookiecutter.package_name }}"
+
+[project.urls]
 Documentation = "{{ cookiecutter.docs_url }}"
+Source = "{{ cookiecutter.repository_url }}"
 
-[tool.flit.metadata.requires-extra]
+[project.optional-dependencies]
 test = [
     "pytest ==7.2.0",
     "pytest-cov ==4.0.0",
