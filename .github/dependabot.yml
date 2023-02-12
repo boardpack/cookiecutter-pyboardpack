@@ -10,9 +10,17 @@ updates:
     commit-message:
       prefix: "⬆"
 
-
   - package-ecosystem: "pip"
-    directory: "/{{cookiecutter.package_name}}"
+    directory: "{{cookiecutter.package_name}}/"
+    schedule:
+      interval: "daily"
+    pull-request-branch-name:
+      separator: "-"
+    commit-message:
+      prefix: "⬆"
+
+  - package-ecosystem: "github-actions"
+    directory: "{{cookiecutter.package_name}}/"
     schedule:
       interval: "daily"
     pull-request-branch-name:
@@ -23,7 +31,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     pull-request-branch-name:
       separator: "-"
     commit-message:
