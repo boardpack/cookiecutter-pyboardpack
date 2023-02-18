@@ -11,7 +11,7 @@ updates:
       prefix: "⬆"
 
   - package-ecosystem: "pip"
-    directory: "{{cookiecutter.package_name}}/"
+    directory: "{{cookiecutter.dist_name}}/"
     schedule:
       interval: "daily"
     pull-request-branch-name:
@@ -20,7 +20,7 @@ updates:
       prefix: "⬆"
 
   - package-ecosystem: "github-actions"
-    directory: "{{cookiecutter.package_name}}/"
+    directory: "{{cookiecutter.dist_name}}/"
     schedule:
       interval: "daily"
     pull-request-branch-name:
